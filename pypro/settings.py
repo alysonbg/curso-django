@@ -151,7 +151,7 @@ if AWS_ACCESS_KEY_ID:
     AWS_S3_CUSTOM_DOMAIN = None
 
     COLLECTFAST_ENABLED = True
-    AWS_DEFAULT_ACL = 'private'
+    AWS_DEFAULT_ACL = None
 
     # Collect Fast
     STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
