@@ -153,6 +153,10 @@ if AWS_ACCESS_KEY_ID:
     COLLECTFAST_ENABLED = True
     AWS_DEFAULT_ACL = 'private'
 
+    # Collect Fast
+    STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+    COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
+
     # Static assets
     STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
     STATIC_S3_PATH = 'static'
