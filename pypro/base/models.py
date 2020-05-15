@@ -59,7 +59,7 @@ class User(AbstractBaseUser, PermissionsMixin):
             'Designates whether this user should be treated as active. '
             'Unselect this instead of deleting accounts.'
         ),
-    )    
+    )
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
 
     objects = UserManager()
@@ -81,6 +81,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         Return the first_name plust the last_name
         """
         full_name = '%s' % (self.first_name)
+        return full_name.strip()
 
     def get_short_name(self):
         """Return the short name for the user."""
