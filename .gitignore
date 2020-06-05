@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 
 staticfiles/
+
+# postgres files for local development
+.pgdata/
