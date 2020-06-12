@@ -20,6 +20,7 @@ collectfast = "*"
 django-debug-toolbar = "*"
 sentry-sdk = "*"
 model-bakery = "*"
+django-ordered-model = "*"
 
 [requires]
 python_version = "3.8"
