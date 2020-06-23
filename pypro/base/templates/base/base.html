@@ -40,8 +40,7 @@
 					{{ user.first_name }}
 					</button>
 					<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-					<button class="dropdown-item" type="button">Sair</button>
-					
+						<a class="btn btn-danger" href="{% url 'logout' %}">Sair</a>
 					</div>
 				</div
 			{% else %}
