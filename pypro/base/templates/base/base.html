@@ -22,17 +22,31 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-dark bg-dark">
+		
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="{% url 'base:home' %}">Python Pro</a>
 			</div>
 			<ul class="nav navbar-nav">
 				{% for modulo in MODULOS %}
-					<li class="nav-item"><a href="{{ modulo.get_absolute_url }}">{{ modulo.titulo }}</a></li>
-				
+				<li class="nav-item"><a href="{{ modulo.get_absolute_url }}">{{ modulo.titulo }}</a></li>
+
 				{% endfor %}
 			</ul>
+			{% if user.is_authenticated %}
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					{{ user.first_name }}
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+					<button class="dropdown-item" type="button">Sair</button>
+					
+					</div>
+				</div
+			{% else %}
+			<a class="btn btn-light" href="{% url 'login' %}">Entrar</a>
+			{% endif %}
 		</div>
 	</nav>
 	{% block body %} {% endblock %}
